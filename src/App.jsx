@@ -7,7 +7,7 @@ import {createBrowserRouter, createRoutesFromElements, Navigate, Route, RouterPr
 import Layout from './Layout'
 import SignHook from './components/SignHook'
 import LoginHook from './components/LoginHook'
-import Post from './components/post'
+import Post from './components/Post'
 import Addpost from './components/Addpost'
 import Allpost from './components/Allpost'
 import EditX from './components/EditX'
