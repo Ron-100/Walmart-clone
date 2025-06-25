@@ -1,0 +1,13 @@
+@media screen and (max-width: 700px) {
+    #form{
+        padding: 5px 10px 0 10px ;
+    }
+
+    #titlebox{
+        width: 60%;
+    }
+
+    #selectbox{
+        width: 40%;
+    }
+}

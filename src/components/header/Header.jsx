@@ -4,6 +4,7 @@ import service from '../../appwrite/service'
 import { useDispatch, useSelector } from 'react-redux'
 import { clearInfo } from '../../store/userDataSlice'
 import Logo from '../../assets/icon.png'
+import './headerCss.css'
 
 function Header() {
     
@@ -37,17 +38,17 @@ function Header() {
             name:'Addpost',
             ref:'/addpost',
         },
-    ]
+    ] 
 
     return (
         <>
-        <div className='w-full h-auto flex p-2 px-6 bg-slate-800'>
-            <div className='w-3/6 flex items-center'>
+        <div id='header' className='w-full h-auto flex p-2 px-6 bg-slate-800'>
+            <div id='ls' className='w-3/6 flex items-center'>
                 <div className=' w-auto h-10 overflow-hidden'>
                     <img src={Logo} alt="" className='w-full h-full  object-cover object-center' />
                 </div>
             </div>
-            <div className='w-3/6 flex items-center justify-end gap-4'>
+            <div id='rs' className='w-3/6 flex items-center justify-end gap-4'>
 
                 {status && navItems.map((item)=>(
                     <p key={item.name} >
@@ -62,7 +63,7 @@ function Header() {
                 </div>
                 { status &&
                     <div className=''>
-                        <p onClick={deleteAcc} className=' pt-2 pb-2 pr-5 pl-5 rounded-lg bg-red-600 text-white hover:text-red-500 hover:bg-white transition-colors cursor-pointer'>{txt}</p>
+                        <p id='logout' onClick={deleteAcc} className=' pt-2 pb-2 pr-5 pl-5 rounded-lg bg-red-600 text-white hover:text-red-500 hover:bg-white transition-colors cursor-pointer'>{txt}</p>
                     </div> 
                 }
 

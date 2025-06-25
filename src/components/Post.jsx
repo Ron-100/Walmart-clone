@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import databaseService from '../appwrite/databaseService'
 import { useParams , Link, useNavigate } from 'react-router-dom';
 import Container from './Container';
-
+import './ComponentCss/Post.css'
 
 function Post() {
     const [post, setPost] = useState(null);
@@ -28,32 +28,34 @@ function Post() {
 
     return post ? (
         <Container className='py-8'>
-            <div className='w-full h-16 flex justify-center items-center'>
-                <div className='flex justify-center items-center gap-28'>
-                    <Link to={`/edit/${post.$id}`} className='text-white w-20 h-10 rounded-lg text-xl flex justify-center items-center bg-green-500'>
-                        Edit
+            <div id='post'>
+                <div className='w-full h-16 flex justify-center items-center'>
+                    <div className='flex justify-center items-center gap-28'>
+                        <Link to={`/edit/${post.$id}`} className='text-white w-20 h-10 rounded-lg text-xl flex justify-center items-center bg-green-500'>
+                            Edit
+                        </Link>
+                        <button onClick={deletPost} className='text-white w-20 h-10 rounded-lg text-xl flex justify-center items-center bg-red-500'>
+                            Delete
+                        </button>
+                    </div>
+                </div>
+                <div className=" flex justify-center items-center flex-col">
+                    <div className="bg-white flex justify-center mb-4 relative border rounded-xl p-2">
+                        <img
+                            src={databaseService.getFileview(post.postImage)}
+                            alt={post.title}
+                            className="rounded-xl"
+                        />
+                    </div>
+                    <div className="w-full flex justify-center mb-6">
+                        <h1 className="text-2xl font-bold">{post.title}</h1>
+                    </div>
+                    <Link to={'/allpost'}>
+                        <button> 
+                            OK 
+                        </button>
                     </Link>
-                    <button onClick={deletPost} className='text-white w-20 h-10 rounded-lg text-xl flex justify-center items-center bg-red-500'>
-                        Delete
-                    </button>
                 </div>
-            </div>
-            <div className=" flex justify-center items-center flex-col">
-                <div className="bg-white flex justify-center mb-4 relative border rounded-xl p-2">
-                    <img
-                        src={databaseService.getFileview(post.postImage)}
-                        alt={post.title}
-                        className="rounded-xl"
-                    />
-                </div>
-                <div className="w-full flex justify-center mb-6">
-                    <h1 className="text-2xl font-bold">{post.title}</h1>
-                </div>
-                <Link to={'/allpost'}>
-                    <button> 
-                        OK 
-                    </button>
-                </Link>
             </div>
         </Container>
     ) : null

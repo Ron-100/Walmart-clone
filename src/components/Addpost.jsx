@@ -5,6 +5,7 @@ import {useNavigate} from 'react-router-dom'
 import {useForm} from 'react-hook-form'
 import databaseService from '../appwrite/databaseService'
 import Container from './Container'
+import './ComponentCss/Addpost.css'
 
 function Addpost({post}) {
     let [loading, setLoading] = useState(false) 
@@ -61,16 +62,16 @@ function Addpost({post}) {
 
     return (
         <Container className='pt-7 px-36'>
-            <form onSubmit={handleSubmit(submit)} className="flex flex-wrap justify-center">
-            <div className="w-2/3 px-2">
+            <form id='form' onSubmit={handleSubmit(submit)} className="flex flex-wrap justify-center">
+            <div id='titlebox' className="w-2/3 px-2">
                 <Input
                     label="Title :"
                     placeholder="Title"
-                    className="mb-4 "
+                    className="mb-4"
                     {...register("title", { required: true })}
                 />
             </div>
-            <div className="w-1/3 px-2">
+            <div id='selectbox' className="w-1/3 px-2">
                 <Input
                     label="Featured Image :"
                     type="file"

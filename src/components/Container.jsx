@@ -1,8 +1,9 @@
 import React from 'react'
+import './ComponentCss/Container.css'
 
 function Container({children, className}) {
     return (
-        <div className={`w-full min-h-screen bg-slate-700 ${className}`}>
+        <div id='cont' className={`w-full min-h-screen bg-slate-700 ${className}`}>
             {children}
         </div>
     )

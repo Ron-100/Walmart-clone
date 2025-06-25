@@ -1,0 +1,21 @@
+@media screen and (max-width: 700px) {
+    #header {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+        padding: 14px;
+    }
+
+    #ls{
+        width: 100%;
+        justify-content: center;
+    }
+    #rs{
+        width: 100%;
+    }
+
+    #logout{
+        padding: 4px 12px;
+    }
+}
