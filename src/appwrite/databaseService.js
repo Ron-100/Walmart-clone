@@ -33,7 +33,7 @@ export class DatabaseService{
     //     }
     // }
 
-    async createPost({title, postImage ,userId}){
+    async createPost({title, postImage ,userId,userName}){
         try {
             return await this.databases.createDocument(
                 conf.appwriteDatabaseid,
@@ -43,6 +43,7 @@ export class DatabaseService{
                     title,
                     postImage,
                     userId,
+                    userName
                 }
             )
         } catch (error) {
@@ -120,7 +121,6 @@ export class DatabaseService{
     //             conf.appwriteDatabaseid,
     //             conf.appwriteCollectionid,
     //             slug
-            
     //         )
     //     } catch (error) {
     //         console.log("Appwrite serive :: getPost :: error", error);

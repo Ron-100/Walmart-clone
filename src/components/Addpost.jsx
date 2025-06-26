@@ -14,6 +14,7 @@ function Addpost({post}) {
             title:post?.title || ''
         }
     });
+
     const navigate = useNavigate()
     let user = useSelector((state)=> state.user.dataUser)
     
@@ -45,8 +46,9 @@ function Addpost({post}) {
                 if (file) {
                     let fileId = file.$id
                     data.postImage = fileId
-                    const dbpost = await databaseService.createPost({...data, userId : user.$id })
-            
+                    const dbpost = await databaseService.createPost({...data, userId : user.$id, userName: user.name })
+                    console.log(dbpost);
+                    
                     if (dbpost) {
                         navigate(`/post/${dbpost.$id}`);
                     }

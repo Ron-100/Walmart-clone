@@ -14,7 +14,7 @@ function Allpost() {
             }
         })
     },[])
- 
+    
     return posts.length > 0 ? (
         <>
         <Container>

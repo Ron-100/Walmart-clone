@@ -1,6 +1,6 @@
-import { Client, Account, ID } from "appwrite";
+import { Client, Account, ID,} from "appwrite";
 import conf from '../conf/conf'
-
+ 
 class Service {
     client = new Client();
     account;
@@ -50,6 +50,14 @@ class Service {
             }            
         }
     }
+
+    // async getUser(){
+    //     try {
+    //         await this.users.get()
+    //     } catch (error) {
+    //         console.log(`Problem of getUser ${error}`);
+    //     }
+    // }
 
     async createJWT() {
         try {
