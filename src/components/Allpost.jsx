@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react'
 import Postcard from './Postcard'
 import databaseService from '../appwrite/databaseService'
 import Container from './Container'
+import './ComponentCss/Allpost.css'
 
 function Allpost() {
 
@@ -19,9 +20,9 @@ function Allpost() {
         <>
         <Container>
             <div className='w-full py-8'>
-                <div className='flex flex-wrap'>
+                <div id='posts_container' className='flex flex-wrap'>
                     {posts.map((post) => (
-                        <div key={post.$id} className='p-2 w-1/4'>
+                        <div id='post' key={post.$id} className='p-2 w-1/4'>
                             <Postcard {...post} />
                         </div>
                     ))}

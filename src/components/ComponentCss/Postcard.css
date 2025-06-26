@@ -34,14 +34,20 @@
 @media screen and (max-width:700px) {
     #mainPc{
         padding: 5px;
+        height: 15em;
     }
 
     #imgPc{
-        height: 2.5em;
+        height: 5em;
     }
 
     #posttitle{
         font-family:monospace;
-        font-size: 14.5px;
+        font-size: 12px;
+    }
+
+    #defie{
+        font-size: 9px;
+        line-height: 12px;
     }
 } 

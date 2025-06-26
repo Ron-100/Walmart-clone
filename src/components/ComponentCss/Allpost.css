@@ -1,0 +1,13 @@
+@media screen and (max-width: 700px) {
+
+    #post{
+        width: 100%;
+    }
+
+    #posts_container{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(auto,auto);
+        row-gap: 1em;
+    }
+}
