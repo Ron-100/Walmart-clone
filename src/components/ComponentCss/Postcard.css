@@ -34,11 +34,11 @@
 @media screen and (max-width:700px) {
     #mainPc{
         padding: 5px;
-        height: 15em;
+        height: 22em;
     }
 
     #imgPc{
-        height: 5em;
+        height: 12em;
     }
 
     #posttitle{
@@ -49,5 +49,10 @@
     #defie{
         font-size: 9px;
         line-height: 12px;
+    }
+
+    #posted{
+        color:  #E23671  ;
+        font-size: 8px;
     }
 } 

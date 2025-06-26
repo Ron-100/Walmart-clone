@@ -16,7 +16,7 @@ function Postcard({$id, title, postImage, userName}) {
                     <p id='defie' className='text-sm  text-justify m-2 text-gray-600'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis sapiente neque mollitia aut deleniti perferendis</p>
                 </div>
                 <div id='name' className='flex justify-end w-full h-auto'>
-                    <p id='posted' className='mb-2 text-center rounded-lg mx-2 font-medium'>Posted By - <span className='capitalize '>{userName}</span></p>
+                    <p id='posted' className='mb-2 text-center rounded-lg mx-2 font-medium'>By - <span className='capitalize '>{userName}</span></p>
                 </div>
             </div>
         </Link>
