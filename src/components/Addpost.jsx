@@ -6,6 +6,7 @@ import {useForm} from 'react-hook-form'
 import databaseService from '../appwrite/databaseService'
 import Container from './Container'
 import './ComponentCss/Addpost.css'
+import {ImageCompres} from './ImageCompres/ImageCompres'
 
 function Addpost({post}) {
     let [loading, setLoading] = useState(false) 
@@ -22,7 +23,8 @@ function Addpost({post}) {
         setLoading(true)
 
         if (post) {
-            let Idfile = post.postImage
+
+            let Idfile = post.postImage // store the image id to delete the previousimage
 
             const file = data.image[0] ? await databaseService.uploadFile(data.image[0]) : null
 
@@ -41,13 +43,13 @@ function Addpost({post}) {
         } else {
             try {
 
-                const file = await databaseService.uploadFile(data.image[0])
+                const compressedFile = await ImageCompres(data.image[0]); // here add image size reducer
+                const file = await databaseService.uploadFile(compressedFile)
 
                 if (file) {
                     let fileId = file.$id
                     data.postImage = fileId
                     const dbpost = await databaseService.createPost({...data, userId : user.$id, userName: user.name })
-                    console.log(dbpost);
                     
                     if (dbpost) {
                         navigate(`/post/${dbpost.$id}`);
